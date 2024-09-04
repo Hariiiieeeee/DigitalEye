@@ -89,65 +89,65 @@ def home():
 def details():
     return render_template('details.html')
 
-# @app.route('/submit_claim_details', methods=['POST'])
-# def submit_claim_details():
-    # try:
-    #     fullname = request.form['full-name']
-    #     contact = request.form['contact-number']
-    #     email = request.form['email']
-    #     address = request.form['address']
+@app.route('/submit_claim_details', methods=['POST'])
+def submit_claim_details():
+    try:
+        fullname = request.form['full-name']
+        contact = request.form['contact-number']
+        email = request.form['email']
+        address = request.form['address']
 
-    #     vehiclenumber = request.form['vehicle-number']
-    #     drivername = request.form['driver-name']
-    #     licensenumber = request.form['license-number']
-    #     alcohol = request.form['alcohol-drugs']
+        vehiclenumber = request.form['vehicle-number']
+        drivername = request.form['driver-name']
+        licensenumber = request.form['license-number']
+        alcohol = request.form['alcohol-drugs']
 
-    #     policynumber = request.form['policy-number']
-    #     insurername = request.form['insurer-name']
+        policynumber = request.form['policy-number']
+        insurername = request.form['insurer-name']
 
-    #     incidentdate = request.form['incident-date']
-    #     incidenttime = request.form['incident-time']
-    #     incidentlocation = request.form['incident-location']
+        incidentdate = request.form['incident-date']
+        incidenttime = request.form['incident-time']
+        incidentlocation = request.form['incident-location']
 
-    #     policereport = request.form['police-report']
-    #     policestation = request.form['police-station']
-    #     accidentcausedby = request.form['accident-caused-by']
+        policereport = request.form['police-report']
+        policestation = request.form['police-station']
+        accidentcausedby = request.form['accident-caused-by']
 
-    #     otherinjuries = request.form['other-injured']
-    #     injuredname = request.form['injured-name']
-    #     thirdpartyvehiclenumber = request.form['injured-vehicle-number']
+        otherinjuries = request.form['other-injured']
+        injuredname = request.form['injured-name']
+        thirdpartyvehiclenumber = request.form['injured-vehicle-number']
 
-    #     accidentdescription = request.form['description-of-accident']
+        accidentdescription = request.form['description-of-accident']
 
-    #     newclaim = {
-    #         'fullname':fullname,
-    #         'contact' : contact,
-    #         'email' : email,
-    #         'address' : address,
-    #         'vehiclenumber' : vehiclenumber,
-    #         'drivername' : drivername,
-    #         'licensenumber' : licensenumber,
-    #         'alcohol' : alcohol,
-    #         'policynumber' : policynumber,
-    #         'insurername' : insurername,
-    #         'incidentdate' : incidentdate,
-    #         'incidenttime' : incidenttime,
-    #         'incident location' : incidentlocation,
-    #         'policereport' : policereport,
-    #         'policestation' : policestation,
-    #         'accident caused by' : accidentcausedby,
-    #         'thirdparty' : otherinjuries,
-    #         'thirdparty name' : injuredname,
-    #         'thirdparty vehicle number': thirdpartyvehiclenumber,
-    #         'accident description' : accidentdescription
-    #     }
-    #     print(newclaim)
+        newclaim = {
+            'fullname':fullname,
+            'contact' : contact,
+            'email' : email,
+            'address' : address,
+            'vehiclenumber' : vehiclenumber,
+            'drivername' : drivername,
+            'licensenumber' : licensenumber,
+            'alcohol' : alcohol,
+            'policynumber' : policynumber,
+            'insurername' : insurername,
+            'incidentdate' : incidentdate,
+            'incidenttime' : incidenttime,
+            'incident location' : incidentlocation,
+            'policereport' : policereport,
+            'policestation' : policestation,
+            'accident caused by' : accidentcausedby,
+            'thirdparty' : otherinjuries,
+            'thirdparty name' : injuredname,
+            'thirdparty vehicle number': thirdpartyvehiclenumber,
+            'accident description' : accidentdescription
+        }
+        print(newclaim)
 
-    #     return redirect('/cam')
+        return redirect('/cam')
 
-    # except Exception as e:
-    #     print(f"Error inserting claim: {e}")
-    #     return "An error occurred while submitting your claim."
+    except Exception as e:
+        print(f"Error inserting claim: {e}")
+        return "An error occurred while submitting your claim."
         
 @app.route('/cam')
 def cam():
